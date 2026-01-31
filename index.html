@@ -1,137 +1,229 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxus AI - Automação e Inteligência para Negócios</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container header-content">
-            <video autoplay loop muted playsinline class="logo-header">
-                <source src="seu-arquivo-logo.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
-            </video>
-            
-            <h1>Sua empresa no piloto automático com Inteligência Artificial.</h1>
-            <br>
-            <h3>Sou Jorge Nascimento, <strong>Arquiteto de Soluções</strong>. Transformo atendimento lento e rotinas manuais em sistemas inteligentes que funcionam 24/7 no WhatsApp. Do formulário ao <strong>MVP pronto em dias</strong>.</h3>
-        </div>
-    </header>
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section id="mvp-diferencial">
-        <div class="container mvp-container">
-            <div class="mvp-text">
-                <h2>Por que escolher a Fluxus AI? Velocidade Real.</h2>
-                <p>Chega de projetos de TI que nunca terminam e custam uma fortuna. Nossa metodologia ágil foca em entregar um <strong>MVP (Produto Mínimo Viável) funcional em poucos dias</strong>. Você valida a solução na prática, sente o resultado no seu dia a dia, e só depois escalamos. Sem enrolação, sem tecniquês.</p>
-                <a href="#contact" class="cta-button mvp-cta">Quero meu MVP agora</a>
-            </div>
-            <div class="mvp-image">
-                <img src="crono.png" alt="Cronômetro marcando 3 dias para o MVP">
-            </div>
-        </div>
-    </section>
+html {
+    scroll-behavior: smooth;
+}
 
-    <section id="persuasive-text" class="container">
-        <h2>Desbloqueie o Poder da Automação: Sua Liberdade Começa Aqui. ✨</h2>
-        <p>Você já se sentiu preso à sua mesa, respondendo mensagens repetitivas, perdendo oportunidades valiosas e vendo seu tempo escorrer pelos dedos? 😩 Imagine um mundo onde seu negócio opera com a precisão de um relógio suíço ⌚, mesmo quando você não está por perto.</p>
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a4a 50%, #050515 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
 
-        <h3>A Revolução Silenciosa no Seu Bolso 🚀</h3>
-        <p>Esqueça as horas intermináveis em frente ao computador. Com a automação inteligente, a magia acontece no seu WhatsApp. Seu assistente virtual trabalha incansavelmente, 24 horas por dia, 7 dias por semana. Ele responde, cadastra, organiza e até gera relatórios, liberando você para o que realmente importa: <strong>crescer, inovar e viver.</strong> 🌟</p>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        <p><strong>Pronto para transformar seu negócio e sua vida?</strong> ✨</p>
-        <p>Ganhe tempo e lucre mais com automações: Clique abaixo e descubra como a liberdade está ao seu alcance! ➡️</p>
-        <a href="https://wa.me/5583991438527?text=Olá,%20vim%20pelo%20site%20e%20quero%20entender%20como%20a%20automação%20pode%20me%20ajudar." class="cta-button" target="_blank">Falar com Especialista</a>
-    </section>
+/* =========================================
+   2. HEADER E LOGO (FOCO NA EXPANSÃO LATERAL)
+   ========================================= */
+header {
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 2px solid #00ffff;
+    background: rgba(10, 10, 42, 0.8);
+    backdrop-filter: blur(10px);
+}
 
-    <section id="services">
-        <div class="container">
-            <h2>Soluções Sob Medida para Seu Negócio</h2>
-            <ul>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-gavel"></i> <span>Automação para Advogados</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Pare de perder prazos e leads. Nossa IA faz triagem inicial e agendamentos 24h, com total sigilo. Libere seu tempo para o que importa: o Direito.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-calculator"></i> <span>Sistemas para Contabilidade</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Automatize a coleta de documentos e responda dúvidas fiscais instantaneamente pelo WhatsApp, eliminando erros manuais da sua equipe.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-rocket"></i> <span>Agentes de Vendas Inteligentes</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Seu cliente não quer esperar. Nossos agentes de IA vendem, qualificam leads e fecham negócios por você, com linguagem humana e persuasiva.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-cogs"></i> <span>Automação de Rotinas</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Chega de tarefas repetitivas! Conectamos seu CRM, planilhas e agenda de forma automática. Ganhe produtividade e reduza custos operacionais.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-chart-line"></i> <span>Controle Financeiro via WhatsApp</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Controle seu fluxo de caixa, emita cobranças e gere relatórios financeiros sem sair do chat. Gestão inteligente para quem não tem tempo a perder.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="service-header">
-                        <i class="fas fa-headset"></i> <span>Atendimento Humanizado com IA</span>
-                    </div>
-                    <div class="service-description">
-                        <p>Ofereça suporte de primeiro mundo 24/7. Nossos agentes entendem o contexto e resolvem problemas de forma rápida, melhorando a experiência do cliente.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
+.logo-header {
+    /* Ajuste de Tamanho e Proporção */
+    width: 220px;            /* Largura maior para presença lateral */
+    height: auto;
+    margin-bottom: 25px;
+    
+    /* Expansão Lateral (Estilo SpaceX/Tesla) */
+    transform: scaleX(1.25); 
+    
+    /* Remoção do Fundo Preto */
+    mix-blend-mode: screen; 
+    
+    /* Efeito de Iluminação */
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.6));
+    transition: all 0.4s ease;
+}
 
-    <section id="contact">
-        <div class="container">
-            <h2>Vamos Conversar?</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Sua automação pode começar ainda esta semana.</p>
-            <div class="contact-card">
-                <div class="name">JORGE NASCIMENTO</div>
-                <div class="title">Arquiteto de Soluções em IA & Automação</div>
-                <ul>
-                    <li>
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/5583991438527?text=Olá,%20Jorge.%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20automação." target="_blank">83 99143-8527</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://www.instagram.com/botsjorge/" target="_blank">@botsjorge</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:ts.technology.jp@gmail.com">ts.technology.jp@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+.logo-header:hover {
+    transform: scaleX(1.3) scaleY(1.05);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.9));
+}
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Fluxus AI - Jorge Nascimento. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+header h1 {
+    font-size: 3em;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+header h3 {
+    font-size: 1.3em;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h3 strong {
+    color: #00ffff;
+}
+
+/* =========================================
+   3. SEÇÃO MVP (PROPORÇÃO DE IMAGEM)
+   ========================================= */
+#mvp-diferencial {
+    padding: 100px 0;
+}
+
+.mvp-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.mvp-text {
+    flex: 1.4; /* Prioridade para o texto */
+    text-align: left;
+}
+
+.mvp-text h2 {
+    font-size: 2.5em;
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+.mvp-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.mvp-image img {
+    max-width: 380px; /* Limite para não dominar a tela */
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    animation: floatImage 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatImage {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+}
+
+/* =========================================
+   4. CARDS DE SERVIÇOS (GLASSMORPHISM)
+   ========================================= */
+#services {
+    padding: 80px 0;
+}
+
+#services ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    list-style: none;
+}
+
+#services li {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#services li:hover {
+    background: rgba(0, 255, 255, 0.08);
+    border-color: #00ffff;
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   5. BOTÕES E ANIMAÇÕES (CTA)
+   ========================================= */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #00ffff, #0088ff);
+    color: #000;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    animation: pulse-attention 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse-attention {
+    0%, 20%, 100% { transform: scale(1); }
+    10% { transform: scale(1.05); }
+    15% { transform: scale(1.03); }
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    filter: brightness(1.2);
+}
+
+/* =========================================
+   6. CONTATO E RODAPÉ
+   ========================================= */
+.contact-card {
+    background: rgba(10, 10, 42, 0.9);
+    border: 2px solid #00ffff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-card li {
+    list-style: none;
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 3px solid #00ffff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* =========================================
+   7. RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .logo-header {
+        width: 150px;
+        transform: scaleX(1.15); /* Menor expansão no celular */
+    }
+
+    header h1 { font-size: 2em; }
+
+    .mvp-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mvp-text { text-align: center; }
+
+    .mvp-image img { max-width: 280px; }
+}
