@@ -93,19 +93,34 @@ header::before {
 }
 
 /* Estilo da Logo no Header */
+/* =========================================
+   EXPANSÃO LATERAL DA LOGO (ESTILO TECH)
+   ========================================= */
+
 .logo-header {
-    max-width: 180px; /* Ajuste conforme o tamanho real da sua imagem */
+    width: 160px;               /* Aumentamos a base da largura */
     height: auto;
-    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6)); /* Brilho neon na logo */
-    transition: transform 0.3s ease;
-   /* Isso faz o fundo preto da imagem "desaparecer" e se fundir com o azul do site */
+    margin-bottom: 20px;
+    
+    /* O truque para expandir lateralmente: */
+    /* O scaleX(1.2) "estica" a logo em 20% apenas para os lados */
+    transform: scaleX(1.2); 
+    
+    /* Mantém a transparência que aplicamos */
     mix-blend-mode: screen; 
-    transition: transform 0.3s ease;
-}
-.logo-header:hover {
-    transform: scale(1.05);
+    
+    /* Brilho um pouco mais difuso para acompanhar a expansão */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
+    
+    /* Suaviza qualquer interação */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* No hover, ela dá um leve "salto" de profundidade */
+.logo-header:hover {
+    transform: scaleX(1.25) scaleY(1.05);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+}
 header h1 {
     margin: 0;
     font-size: 3.2em;
