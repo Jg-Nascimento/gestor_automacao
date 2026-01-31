@@ -565,3 +565,56 @@ footer p {
     section#contact li { font-size: 1.1em; padding: 12px; }
     section#contact li i { font-size: 1.3em; }
 }
+
+/* =========================================
+   AJUSTES DE PROPORÇÃO DE IMAGEM
+   ========================================= */
+
+/* 1. Ajuste da Logo (Header) */
+.logo-header {
+    max-width: 120px; /* Reduzido para não dominar o topo */
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.4));
+    transition: transform 0.3s ease;
+}
+
+/* 2. Ajuste da Imagem do Cronômetro (MVP) */
+.mvp-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mvp-image img {
+    max-width: 400px; /* LIMITE REAL: a imagem não passará disso */
+    width: 100%;      /* Mas ocupará o espaço disponível se for menor que 400px */
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    animation: floatImage 4s ease-in-out infinite alternate;
+}
+
+/* 3. Ajustes para Celular (Mobile) */
+@media (max-width: 768px) {
+    .logo-header {
+        max-width: 90px; /* Bem discreta no celular */
+    }
+
+    .mvp-image img {
+        max-width: 280px; /* Tamanho ideal para telas de celular */
+        margin-top: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em; /* Ajuste para o texto não brigar com a logo */
+    }
+}
+
+/* Mantendo a animação de flutuar mas de forma mais sutil */
+@keyframes floatImage {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
