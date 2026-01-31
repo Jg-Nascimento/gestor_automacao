@@ -627,3 +627,68 @@ footer p {
         font-size: 1.8em;    /* Título menor para equilibrar com a logo */
     }
 }
+
+/* =========================================
+   POLIMENTO FINAL (PREMIUM LOOK)
+   ========================================= */
+
+/* Aumenta o espaçamento entre as grandes seções para o site "respirar" */
+section {
+    padding: 100px 0; /* Mais espaço vertical entre os blocos de conteúdo */
+}
+
+/* Melhora a legibilidade dos parágrafos */
+p {
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.85); /* Branco levemente suavizado para não cansar a vista */
+}
+
+/* Efeito de "vidro" (Glassmorphism) mais nítido nos cards de serviço */
+section#services li {
+    background: rgba(26, 26, 74, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Suporte para Safari */
+    border: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+/* Pequeno ajuste no botão para ele "pulsar" levemente no hover */
+.cta-button:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Melhora o contraste do texto de depoimento/persuasivo */
+section#persuasive-text {
+    background: linear-gradient(180deg, rgba(10, 10, 42, 0) 0%, rgba(0, 255, 255, 0.05) 50%, rgba(10, 10, 42, 0) 100%);
+}
+
+/* =========================================
+   ANIMAÇÃO DE CHAMADA PARA AÇÃO (CTA)
+   ========================================= */
+
+/* Definindo o movimento de "balanço" sutil */
+@keyframes pulse-attention {
+    0% { transform: scale(1); }
+    5% { transform: scale(1.05); }
+    10% { transform: scale(1); }
+    15% { transform: scale(1.03); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* Aplicando ao botão "Falar com Especialista" */
+/* Dica: Verifique se a classe é .cta-button ou ajuste para a que você usa */
+.cta-button, #btn-whatsapp {
+    display: inline-block;
+    animation: pulse-attention 4s ease-in-out infinite; /* Repete a cada 4 segundos */
+    transition: all 0.3s ease;
+}
+
+/* Quando o usuário passa o mouse, a animação pausa para ele clicar com precisão */
+.cta-button:hover {
+    animation-play-state: paused;
+    transform: translateY(-3px) scale(1.05) !important;
+    background-color: #00e6e6; /* Um ciano levemente mais vibrante */
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
+}
