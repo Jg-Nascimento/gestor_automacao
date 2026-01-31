@@ -1,5 +1,5 @@
 /* =========================================
-   RESET E ESTILOS GERAIS
+   1. RESET E CONFIGURAÇÕES GERAIS
    ========================================= */
 * {
     margin: 0;
@@ -8,705 +8,222 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Fundo principal escuro e tecnológico */
-    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a4a 50%, #2a2a6a 100%);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a4a 50%, #050515 100%);
     background-attachment: fixed;
     color: #ffffff;
     overflow-x: hidden;
-    position: relative;
-}
-
-/* Efeito de partículas sutis no fundo */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
+    line-height: 1.6;
 }
 
 .container {
-    width: 85%; /* Ligeiramente mais largo para monitores modernos */
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
 /* =========================================
-   HEADER (CABEÇALHO)
+   2. HEADER E LOGO (FOCO NA EXPANSÃO LATERAL)
    ========================================= */
 header {
-    background: linear-gradient(135deg, rgba(26, 26, 74, 0.95) 0%, rgba(42, 42, 106, 0.95) 100%);
-    backdrop-filter: blur(10px);
-    padding: 60px 0; /* Mais espaço para respirar */
+    padding: 80px 0 60px;
     text-align: center;
     border-bottom: 2px solid #00ffff;
-    position: relative;
-    overflow: hidden;
+    background: rgba(10, 10, 42, 0.8);
+    backdrop-filter: blur(10px);
 }
-
-/* Efeito de linhas de circuito no header */
-header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 255, 255, 0.03) 2px,
-        rgba(0, 255, 255, 0.03) 4px
-    );
-    animation: movePattern 20s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes movePattern {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Estilo da Logo no Header */
-/* =========================================
-   EXPANSÃO LATERAL DA LOGO (ESTILO TECH)
-   ========================================= */
 
 .logo-header {
-    width: 160px;               /* Aumentamos a base da largura */
+    /* Ajuste de Tamanho e Proporção */
+    width: 220px;            /* Largura maior para presença lateral */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     
-    /* O truque para expandir lateralmente: */
-    /* O scaleX(1.2) "estica" a logo em 20% apenas para os lados */
-    transform: scaleX(1.2); 
+    /* Expansão Lateral (Estilo SpaceX/Tesla) */
+    transform: scaleX(1.25); 
     
-    /* Mantém a transparência que aplicamos */
+    /* Remoção do Fundo Preto */
     mix-blend-mode: screen; 
     
-    /* Brilho um pouco mais difuso para acompanhar a expansão */
-    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
-    
-    /* Suaviza qualquer interação */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Efeito de Iluminação */
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.6));
+    transition: all 0.4s ease;
 }
 
-/* No hover, ela dá um leve "salto" de profundidade */
 .logo-header:hover {
-    transform: scaleX(1.25) scaleY(1.05);
-    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+    transform: scaleX(1.3) scaleY(1.05);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.9));
 }
+
 header h1 {
-    margin: 0;
-    font-size: 3.2em;
-    font-weight: 700; /* Mais peso para impacto */
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    line-height: 1.2;
+    font-size: 3em;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    margin-bottom: 20px;
 }
 
 header h3 {
-    font-size: 1.4em;
-    color: #e0e0e0;
-    font-weight: 300;
-    max-width: 900px;
+    font-size: 1.3em;
+    color: #ccc;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.5;
 }
 
-/* Destaque em neon para palavras-chave */
 header h3 strong {
     color: #00ffff;
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
-
 
 /* =========================================
-   NOVA SEÇÃO: DIFERENCIAL MVP (CRONÔMETRO)
+   3. SEÇÃO MVP (PROPORÇÃO DE IMAGEM)
    ========================================= */
-section#mvp-diferencial {
-    padding: 80px 0;
-    /* Um fundo ligeiramente diferente para destacar a seção */
-    background: linear-gradient(135deg, rgba(15, 15, 50, 0.8) 0%, rgba(30, 30, 80, 0.8) 100%);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
-    position: relative;
-    overflow: hidden;
+#mvp-diferencial {
+    padding: 100px 0;
 }
 
-/* Flex container para layout lado a lado */
 .mvp-container {
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-between;
-    gap: 50px; /* Espaço entre texto e imagem */
+    align-items: center;
+    gap: 60px;
 }
 
-/* Coluna de Texto */
 .mvp-text {
-    flex: 1; /* Ocupa o espaço disponível */
+    flex: 1.4; /* Prioridade para o texto */
     text-align: left;
 }
 
 .mvp-text h2 {
-    font-size: 2.8em;
+    font-size: 2.5em;
     color: #00ffff;
-    margin-bottom: 25px;
-    font-weight: 700;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    margin-bottom: 20px;
 }
 
-.mvp-text p {
-    font-size: 1.3em;
-    line-height: 1.7;
-    color: #e0e0e0;
-    margin-bottom: 40px;
-}
-
-.mvp-text strong {
-    color: #00ffff;
-    font-weight: 600;
-}
-
-/* Coluna da Imagem */
 .mvp-image {
     flex: 1;
     display: flex;
     justify-content: center;
-    position: relative;
 }
 
 .mvp-image img {
-    max-width: 100%;
+    max-width: 380px; /* Limite para não dominar a tela */
+    width: 100%;
     height: auto;
     border-radius: 20px;
-    /* Moldura futurista brilhante */
-    border: 2px solid rgba(0, 255, 255, 0.6);
-    box-shadow: 
-        0 0 30px rgba(0, 255, 255, 0.4),
-        inset 0 0 30px rgba(0, 255, 255, 0.2);
-    /* Animação sutil de flutuação */
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
     animation: floatImage 4s ease-in-out infinite alternate;
 }
 
 @keyframes floatImage {
     from { transform: translateY(0); }
-    to { transform: translateY(-20px); }
+    to { transform: translateY(-15px); }
 }
-
 
 /* =========================================
-   SEÇÕES GERAIS
+   4. CARDS DE SERVIÇOS (GLASSMORPHISM)
    ========================================= */
-section {
-    padding: 60px 0;
-    text-align: center;
+#services {
+    padding: 80px 0;
 }
 
-
-/* =========================================
-   SEÇÃO: SERVIÇOS (Títulos e Estrutura)
-   ========================================= */
-section#services h2,
-section#contact h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: #00ffff;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-}
-
-section#services h2::after,
-section#contact h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ffff, transparent);
-}
-
-/* Grid de Serviços */
-section#services ul {
-    list-style: none;
-    padding: 0;
+#services ul {
     display: grid;
-    /* Grid responsivo automático */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    position: relative;
-    z-index: 1;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    list-style: none;
 }
 
-/* Cards de Serviço */
-section#services li {
-    background: linear-gradient(135deg, rgba(26, 26, 74, 0.8) 0%, rgba(42, 42, 106, 0.8) 100%);
+#services li {
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.1);
     padding: 30px;
     border-radius: 15px;
-    text-align: left;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-/* Efeito Hover no Card */
-section#services li:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #00ffff;
-    box-shadow: 
-        0 15px 30px rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(0, 255, 255, 0.4);
-}
-
-/* Header do Card (Ícone e Título) */
-section#services li .service-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-section#services li .service-header i {
-    margin-right: 15px;
-    color: #00ffff;
-    font-size: 1.8em;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    transition: transform 0.3s ease;
-}
-
-section#services li:hover .service-header i {
-    transform: scale(1.2);
-}
-
-section#services li .service-header span {
-    font-size: 1.3em;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-/* Descrição do Serviço (Acordeão) */
-.service-description {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    opacity: 0;
-}
-
-.service-description.expanded {
-    max-height: 200px; /* Ajuste se o texto for muito longo */
-    opacity: 1;
-    margin-top: 15px;
-}
-
-.service-description p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #d0d0d0;
-    padding-left: 5px;
-    border-left: 2px solid rgba(0, 255, 255, 0.3);
-    padding-left: 15px;
-}
-
-
-/* =========================================
-   SEÇÃO: TEXTO PERSUASIVO
-   ========================================= */
-section#persuasive-text {
-    padding: 80px 0;
-    background: linear-gradient(135deg, rgba(20, 20, 60, 0.95) 0%, rgba(35, 35, 90, 0.95) 100%);
-    border-top: 1px solid rgba(0, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-section#persuasive-text h2 {
-    font-size: 2.8em;
-    color: #00ffff;
-    margin-bottom: 30px;
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-}
-
-section#persuasive-text h3 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-section#persuasive-text p {
-    font-size: 1.3em;
-    line-height: 1.8;
-    color: #e0e0e0;
-    max-width: 900px;
-    margin: 0 auto 25px auto;
-}
-
-section#persuasive-text strong {
-    color: #00ffff;
-}
-
-/* Botão CTA (Chamada para ação) */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(90deg, #00ffff, #00aaff);
-    color: #0a0a2a;
-    padding: 20px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 40px;
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Efeito de brilho passando pelo botão */
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    transform: skewX(-30deg);
-    transition: all 0.7s ease-in-out;
-    z-index: -1;
-}
-
-.cta-button:hover::before {
-    left: 100%;
-}
-
-.cta-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.7);
-    color: #000;
-}
-
-
-/* =========================================
-   SEÇÃO: CONTATO
-   ========================================= */
-section#contact {
-    padding-top: 80px;
-    background: linear-gradient(135deg, rgba(26, 26, 74, 0.9) 0%, rgba(42, 42, 106, 0.9) 100%);
-    border-top: 2px solid #00ffff;
-}
-
-.contact-card {
-    background: linear-gradient(135deg, rgba(15, 15, 50, 0.9) 0%, rgba(30, 30, 80, 0.9) 100%);
-    backdrop-filter: blur(20px);
-    border-radius: 25px;
-    padding: 50px;
-    max-width: 650px;
-    margin: 0 auto;
-    border: 2px solid rgba(0, 255, 255, 0.4);
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(0, 255, 255, 0.1);
-}
-
-.contact-card .name {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #00ffff;
-    margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-    text-transform: uppercase;
-}
-
-.contact-card .title {
-    font-size: 1.4em;
-    color: #cccccc;
-    margin-bottom: 40px;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-section#contact ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-}
-
-section#contact li {
-    margin-bottom: 25px;
-    font-size: 1.3em;
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    background: rgba(0, 255, 255, 0.03);
-    border-radius: 12px;
-    border-left: 4px solid #00ffff;
     transition: all 0.3s ease;
 }
 
-section#contact li:hover {
-    background: rgba(0, 255, 255, 0.1);
-    transform: translateX(15px);
-    box-shadow: -5px 0 15px rgba(0, 255, 255, 0.3);
+#services li:hover {
+    background: rgba(0, 255, 255, 0.08);
+    border-color: #00ffff;
+    transform: translateY(-5px);
 }
 
-section#contact li i {
-    margin-right: 20px;
-    color: #00ffff;
-    font-size: 1.5em;
-    width: 30px;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-}
-
-section#contact li a {
-    color: #ffffff;
+/* =========================================
+   5. BOTÕES E ANIMAÇÕES (CTA)
+   ========================================= */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #00ffff, #0088ff);
+    color: #000;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 800;
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    animation: pulse-attention 4s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-section#contact li a:hover {
-    color: #00ffff;
+@keyframes pulse-attention {
+    0%, 20%, 100% { transform: scale(1); }
+    10% { transform: scale(1.05); }
+    15% { transform: scale(1.03); }
 }
 
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    filter: brightness(1.2);
+}
 
 /* =========================================
-   FOOTER (RODAPÉ)
+   6. CONTATO E RODAPÉ
    ========================================= */
+.contact-card {
+    background: rgba(10, 10, 42, 0.9);
+    border: 2px solid #00ffff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-card li {
+    list-style: none;
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 3px solid #00ffff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
 footer {
-    background: #0a0a2a;
-    color: #888;
-    padding: 40px 0;
+    padding: 40px;
     text-align: center;
-    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    font-size: 0.9em;
+    color: #666;
 }
-
-footer p {
-    font-size: 1.1em;
-}
-
 
 /* =========================================
-   RESPONSIVIDADE (MEDIA QUERIES)
+   7. RESPONSIVIDADE (MOBILE)
    ========================================= */
+@media (max-width: 768px) {
+    .logo-header {
+        width: 150px;
+        transform: scaleX(1.15); /* Menor expansão no celular */
+    }
 
-/* Tablets e Telas Médias */
-@media (max-width: 992px) {
-    header h1 { font-size: 2.8em; }
-    header h3 { font-size: 1.3em; }
+    header h1 { font-size: 2em; }
 
-    /* Ajusta a seção MVP para empilhar em telas menores */
     .mvp-container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
     }
 
-    .mvp-text {
-        text-align: center;
-        order: 1; /* Texto primeiro */
-    }
-    
-    .mvp-image {
-        order: 2; /* Imagem depois */
-    }
+    .mvp-text { text-align: center; }
 
-    .mvp-image img {
-        max-width: 80%; /* Reduz um pouco a imagem */
-    }
-
-    section#services ul {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-/* Celulares */
-@media (max-width: 768px) {
-    header { padding: 40px 0; }
-    .logo-header { max-width: 140px; }
-    header h1 { font-size: 2.2em; }
-    header h3 { font-size: 1.1em; }
-
-    section { padding: 40px 0; }
-
-    /* Ajustes na seção MVP para celular */
-    .mvp-text h2 { font-size: 2em; }
-    .mvp-text p { font-size: 1.1em; }
-    .mvp-image img { max-width: 100%; }
-
-    section#persuasive-text h2 { font-size: 2em; }
-    section#persuasive-text h3 { font-size: 1.5em; }
-    .cta-button { font-size: 1.2em; padding: 15px 30px; width: 90%; }
-
-    .contact-card { padding: 30px 20px; }
-    .contact-card .name { font-size: 2em; }
-    section#contact li { font-size: 1.1em; padding: 12px; }
-    section#contact li i { font-size: 1.3em; }
-}
-
-/* =========================================
-   CONTROLE RIGOROSO DE PROPORÇÃO
-   ========================================= */
-
-/* 1. A Logo no Header (mais discreta) */
-.logo-header {
-    width: 100px;           /* Tamanho fixo ideal para logos horizontais/quadradas */
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
-}
-
-/* 2. Ajuste da Seção MVP (Texto vs Imagem) */
-.mvp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centraliza o conjunto */
-    gap: 60px;               /* Espaço generoso entre texto e imagem */
-}
-
-.mvp-text {
-    flex: 1.5;               /* Dá mais espaço para o texto (60%) */
-    text-align: left;
-}
-
-.mvp-image {
-    flex: 1;                 /* Menos espaço para a imagem (40%) */
-    display: flex;
-    justify-content: center;
-}
-
-.mvp-image img {
-    max-width: 320px;        /* LIMITE FIXO: A imagem nunca será maior que um tablet pequeno */
-    width: 100%;             /* Se adapta a telas menores que 320px */
-    height: auto;
-    object-fit: contain;     /* Garante que não haja distorção */
-    border-radius: 20px;
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* 3. Ajuste para Celulares (Mobile) */
-@media (max-width: 768px) {
-    .mvp-container {
-        flex-direction: column; /* Empilha no celular */
-        gap: 30px;
-    }
-
-    .logo-header {
-        width: 80px;         /* Ainda menor no celular */
-    }
-
-    .mvp-image img {
-        max-width: 220px;    /* Imagem compacta para não empurrar o conteúdo para baixo */
-    }
-
-    header h1 {
-        font-size: 1.8em;    /* Título menor para equilibrar com a logo */
-    }
-}
-
-/* =========================================
-   POLIMENTO FINAL (PREMIUM LOOK)
-   ========================================= */
-
-/* Aumenta o espaçamento entre as grandes seções para o site "respirar" */
-section {
-    padding: 100px 0; /* Mais espaço vertical entre os blocos de conteúdo */
-}
-
-/* Melhora a legibilidade dos parágrafos */
-p {
-    line-height: 1.8;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.85); /* Branco levemente suavizado para não cansar a vista */
-}
-
-/* Efeito de "vidro" (Glassmorphism) mais nítido nos cards de serviço */
-section#services li {
-    background: rgba(26, 26, 74, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px); /* Suporte para Safari */
-    border: 1px solid rgba(0, 255, 255, 0.15);
-}
-
-/* Pequeno ajuste no botão para ele "pulsar" levemente no hover */
-.cta-button:hover {
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-    filter: brightness(1.1);
-}
-
-/* Melhora o contraste do texto de depoimento/persuasivo */
-section#persuasive-text {
-    background: linear-gradient(180deg, rgba(10, 10, 42, 0) 0%, rgba(0, 255, 255, 0.05) 50%, rgba(10, 10, 42, 0) 100%);
-}
-
-/* =========================================
-   ANIMAÇÃO DE CHAMADA PARA AÇÃO (CTA)
-   ========================================= */
-
-/* Definindo o movimento de "balanço" sutil */
-@keyframes pulse-attention {
-    0% { transform: scale(1); }
-    5% { transform: scale(1.05); }
-    10% { transform: scale(1); }
-    15% { transform: scale(1.03); }
-    20% { transform: scale(1); }
-    100% { transform: scale(1); }
-}
-
-/* Aplicando ao botão "Falar com Especialista" */
-/* Dica: Verifique se a classe é .cta-button ou ajuste para a que você usa */
-.cta-button, #btn-whatsapp {
-    display: inline-block;
-    animation: pulse-attention 4s ease-in-out infinite; /* Repete a cada 4 segundos */
-    transition: all 0.3s ease;
-}
-
-/* Quando o usuário passa o mouse, a animação pausa para ele clicar com precisão */
-.cta-button:hover {
-    animation-play-state: paused;
-    transform: translateY(-3px) scale(1.05) !important;
-    background-color: #00e6e6; /* Um ciano levemente mais vibrante */
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
+    .mvp-image img { max-width: 280px; }
 }
