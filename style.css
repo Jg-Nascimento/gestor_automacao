@@ -98,6 +98,9 @@ header::before {
     height: auto;
     filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6)); /* Brilho neon na logo */
     transition: transform 0.3s ease;
+   /* Isso faz o fundo preto da imagem "desaparecer" e se fundir com o azul do site */
+    mix-blend-mode: screen; 
+    transition: transform 0.3s ease;
 }
 .logo-header:hover {
     transform: scale(1.05);
