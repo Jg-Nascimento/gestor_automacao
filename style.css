@@ -567,54 +567,63 @@ footer p {
 }
 
 /* =========================================
-   AJUSTES DE PROPORÇÃO DE IMAGEM
+   CONTROLE RIGOROSO DE PROPORÇÃO
    ========================================= */
 
-/* 1. Ajuste da Logo (Header) */
+/* 1. A Logo no Header (mais discreta) */
 .logo-header {
-    max-width: 120px; /* Reduzido para não dominar o topo */
+    width: 100px;           /* Tamanho fixo ideal para logos horizontais/quadradas */
+    max-width: 120px;
     height: auto;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.4));
-    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
 }
 
-/* 2. Ajuste da Imagem do Cronômetro (MVP) */
+/* 2. Ajuste da Seção MVP (Texto vs Imagem) */
+.mvp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conjunto */
+    gap: 60px;               /* Espaço generoso entre texto e imagem */
+}
+
+.mvp-text {
+    flex: 1.5;               /* Dá mais espaço para o texto (60%) */
+    text-align: left;
+}
+
 .mvp-image {
-    flex: 1;
+    flex: 1;                 /* Menos espaço para a imagem (40%) */
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .mvp-image img {
-    max-width: 400px; /* LIMITE REAL: a imagem não passará disso */
-    width: 100%;      /* Mas ocupará o espaço disponível se for menor que 400px */
+    max-width: 320px;        /* LIMITE FIXO: A imagem nunca será maior que um tablet pequeno */
+    width: 100%;             /* Se adapta a telas menores que 320px */
     height: auto;
-    border-radius: 15px;
-    border: 2px solid rgba(0, 255, 255, 0.5);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    animation: floatImage 4s ease-in-out infinite alternate;
+    object-fit: contain;     /* Garante que não haja distorção */
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* 3. Ajustes para Celular (Mobile) */
+/* 3. Ajuste para Celulares (Mobile) */
 @media (max-width: 768px) {
+    .mvp-container {
+        flex-direction: column; /* Empilha no celular */
+        gap: 30px;
+    }
+
     .logo-header {
-        max-width: 90px; /* Bem discreta no celular */
+        width: 80px;         /* Ainda menor no celular */
     }
 
     .mvp-image img {
-        max-width: 280px; /* Tamanho ideal para telas de celular */
-        margin-top: 20px;
+        max-width: 220px;    /* Imagem compacta para não empurrar o conteúdo para baixo */
     }
-    
-    header h1 {
-        font-size: 1.8em; /* Ajuste para o texto não brigar com a logo */
-    }
-}
 
-/* Mantendo a animação de flutuar mas de forma mais sutil */
-@keyframes floatImage {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
+    header h1 {
+        font-size: 1.8em;    /* Título menor para equilibrar com a logo */
+    }
 }
